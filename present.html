@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>شاشة المقدّم · علم البيانات والذكاء الاصطناعي</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F6BFF'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%237ED321'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/present.css">
+<link rel="stylesheet" href="css/light.css">
+</head>
+<body>
+<div class="stage" id="stage"><canvas id="c3d"></canvas><div class="labels" id="labels"></div></div>
+<div id="scene"></div>
+<div id="reactions"></div>
+
+<div id="login" class="overlay">
+  <form class="card login" id="loginForm">
+    <h2>دخول المقدّم</h2>
+    <p id="loginHint" style="color:var(--muted);font-size:14px"></p>
+    <label class="f" for="em">البريد</label><input type="text" id="em" autocomplete="username" dir="ltr">
+    <label class="f" for="pw">كلمة المرور</label><input type="text" id="pw" autocomplete="current-password" dir="ltr" style="-webkit-text-security:disc">
+    <div class="err" id="lerr" style="color:#ffb3c0;min-height:22px;font-weight:700"></div>
+    <button class="btn" style="width:100%">دخول</button>
+  </form>
+</div>
+
+<div id="hud" class="hud">
+  <div class="hud-l"><span id="hStat" class="chip">—</span><span id="hClock" class="chip ltr">00:00</span></div>
+  <div class="hud-c" id="hBar">
+    <button class="btn ghost sm" id="bPrev" title="السابق (←)">‹</button>
+    <button class="btn sm" id="bAct" title="Space">التالي</button>
+    <button class="btn ghost sm" id="bNext" title="التالي (→)">›</button>
+    <span class="sep"></span>
+    <button class="btn ghost sm" id="bMenu" title="G">فهرس</button>
+    <button class="btn ghost sm" id="bQr" title="Q">QR</button>
+    <button class="btn ghost sm" id="bFs" title="F">ملء الشاشة</button>
+    <button class="btn ghost sm" id="bMore" title="المزيد">⋯</button>
+  </div>
+  <div class="hud-r"><span id="hScene" class="chip ltr">1/1</span></div>
+  <div class="progress"><i id="hProg"></i></div>
+</div>
+<div id="menu" class="overlay hide"><div class="card menu"><div class="mh"><h3>فهرس المشاهد</h3><button class="btn ghost sm" id="mClose">إغلاق</button></div><div id="mList"></div></div></div>
+<div id="qrov" class="overlay hide"><div class="qrbox"><div id="qrBig"></div><h2>امسح للانضمام</h2><p id="qrUrl" class="ltr"></p></div></div>
+<div id="more" class="overlay hide"><div class="card menu" style="max-width:420px"><div class="mh"><h3>أدوات المقدّم</h3><button class="btn ghost sm" id="moClose">إغلاق</button></div>
+  <div class="list">
+    <button class="btn ghost" id="mSecret">إظهار كلمة السر الختامية</button>
+    <button class="btn ghost" id="mReset">تصفير الجلسة (حذف اللاعبين والإجابات)</button>
+    <button class="btn ghost" id="mLogout">تسجيل الخروج</button>
+    <a class="btn ghost" href="index.html" target="_blank">فتح تطبيق الطلبة</a>
+  </div><div id="moOut" style="margin-top:10px;font-size:26px;font-weight:800;text-align:center;direction:ltr"></div></div></div>
+<script src="vendor/supabase.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script type="module" src="js/present.js"></script>
+</body>
+</html>

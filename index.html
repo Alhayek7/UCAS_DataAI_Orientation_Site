@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#EEF5FF">
+<title>رحلة علم البيانات والذكاء الاصطناعي · UCAS</title>
+<meta name="description" content="نشاط تفاعلي مباشر لطلبة علم البيانات والذكاء الاصطناعي الجدد: مسابقات، مجرة وظائف ثلاثية الأبعاد، وتحديات بين الشباب والبنات.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F6BFF'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%237ED321'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/cairo-arabic-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/student.css">
+<link rel="stylesheet" href="css/light.css">
+</head>
+<body>
+<div class="stage" id="stage"><canvas id="c3d"></canvas><div class="labels" id="labels"></div></div>
+<div id="demo-ribbon" class="hide">الوضع التجريبي · بدون Supabase</div>
+<div id="app">
+  <header class="top" id="top" hidden>
+    <div class="who"><div class="av" id="av">؟</div><div><b id="whoName">—</b><small id="whoLvl"></small></div></div>
+    <div class="xpill" id="xpill"><span id="xpv">0</span><small>XP</small></div>
+  </header>
+  <main id="view" aria-live="polite"></main>
+  <nav class="tabs" id="tabs" hidden>
+    <button data-tab="live" class="on"><span data-i="radio"></span><b>مباشر</b></button>
+    <button data-tab="explore"><span data-i="orbit"></span><b>استكشف</b></button>
+    <button data-tab="rank"><span data-i="trophy"></span><b>الترتيب</b></button>
+    <button data-tab="me"><span data-i="user-round"></span><b>أنا</b></button>
+  </nav>
+</div>
+<noscript><p style="padding:24px">يتطلب هذا الموقع تفعيل JavaScript.</p></noscript>
+<script src="vendor/supabase.js"></script>
+<script src="vendor/qrcode.js"></script>
+<script type="module" src="js/student.js"></script>
+</body>
+</html>
